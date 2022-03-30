@@ -2,7 +2,10 @@
   <nb-layout-header fixed>
     <app-header title='Writeo'></app-header>
   </nb-layout-header>
-  <nb-layout-column>
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
+    <nb-menu [items]="menu" autoCollapse="true"></nb-menu>
+  </nb-sidebar>
+  <nb-layout-column class="no-padding">
     <router-outlet></router-outlet>
   </nb-layout-column>
 </nb-layout>
