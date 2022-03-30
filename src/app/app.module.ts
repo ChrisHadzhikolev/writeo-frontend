@@ -3,20 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NbThemeModule, NbLayoutModule, NbMenuModule, NbSidebarModule} from '@nebular/theme';
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbMenuModule,
+  NbSidebarModule,
+  NbIconModule,
+  NbActionsModule, NbContextMenuModule, NbUserModule
+} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NavigationComponent } from './layouts/navigation/navigation.component';
 import { DefaultComponent } from './pages/default/default.component';
 import {DefaultModule} from "./pages/default/default.module";
+import {ComponentsModule} from "./components/components.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    NavbarComponent,
     NavigationComponent,
     DefaultComponent
   ],
@@ -29,7 +33,12 @@ import {DefaultModule} from "./pages/default/default.module";
     NbEvaIconsModule,
     NbMenuModule.forRoot(),
     NbSidebarModule.forRoot(),
-    DefaultModule
+    DefaultModule,
+    NbIconModule,
+    NbActionsModule,
+    NbContextMenuModule,
+    NbUserModule,
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
