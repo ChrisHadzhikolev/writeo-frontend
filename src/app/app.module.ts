@@ -10,6 +10,7 @@ import {NbThemeModule, NbLayoutModule, NbMenuModule, NbSidebarModule} from '@neb
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NavigationComponent } from './layouts/navigation/navigation.component';
 import { DefaultComponent } from './pages/default/default.component';
+import {DefaultModule} from "./pages/default/default.module";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DefaultComponent } from './pages/default/default.component';
     NbLayoutModule,
     NbEvaIconsModule,
     NbMenuModule,
-    NbSidebarModule
+    NbSidebarModule,
+    DefaultModule
   ],
   providers: [],
   bootstrap: [AppComponent]
