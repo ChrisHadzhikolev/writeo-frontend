@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {DefaultComponent} from "./pages/default/default.component";
+import {AuthenticationComponent} from "./pages/authentication/authentication.component";
 
 const routes: Routes = [
   {
-    path: 'default',
-    component: DefaultComponent,
+    path: 'auth',
+    component: AuthenticationComponent,
     loadChildren: () =>
-      import('./pages/default/default.module').then((m) => m.DefaultModule),
+      import('./pages/authentication/authentication.module').then((m) => m.AuthenticationModule),
   }
 ];
 

@@ -15,6 +15,7 @@
     "@angular/common": "~13.0.0",
     "@angular/compiler": "~13.0.0",
     "@angular/core": "~13.0.0",
+    "@angular/flex-layout": "^13.0.0-beta.38",
     "@angular/forms": "~13.0.0",
     "@angular/platform-browser": "~13.0.0",
     "@angular/platform-browser-dynamic": "~13.0.0",
@@ -22,6 +23,8 @@
     "@nebular/eva-icons": "9.0.1",
     "@nebular/theme": "^9.0.1",
     "eva-icons": "^1.1.2",
+    "jwt-decode": "^3.1.2",
+    "lodash": "^4.17.21",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

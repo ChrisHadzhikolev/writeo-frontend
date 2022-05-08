@@ -1,0 +1,12 @@
+<div *ngIf="loggedIn; else auth">
+  You are already logged in.
+</div>
+
+<ng-template #auth>
+  <div *ngIf="register; else login">
+    <app-register></app-register>
+  </div>
+</ng-template>
+<ng-template #login>
+  <app-login></app-login>
+</ng-template>

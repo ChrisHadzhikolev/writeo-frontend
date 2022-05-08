@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { NbSidebarService, NbMenuService, NbMenuBag } from '@nebular/theme';
 import { Router } from '@angular/router';
+import {AuthenticationService} from "../../services/auth/authentication.service";
 
 @Component({
   selector: 'app-header',
@@ -22,12 +23,14 @@ export class HeaderComponent implements OnInit {
     { title: 'Log Out' }
   ];
   user: any;
+  userProfile: any;
 
 
   constructor(
     private sidebarService: NbSidebarService,
     private menuService: NbMenuService,
     private router: Router,
+    private authenticationService: AuthenticationService
   ) {
 
     menuService.onItemClick().subscribe((item: NbMenuBag) => {
@@ -45,8 +48,7 @@ export class HeaderComponent implements OnInit {
           this.router.navigate(['/settings']);
           break;
         case 'Log Out':
-          //TODO after implementing authentication
-          //this.router.navigate(['/']);
+          this.authenticationService.logout();
           break;
         default:
           break;
@@ -60,8 +62,12 @@ export class HeaderComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    // TODO get user data
-    this.user = "John Doe" //will remove it once authentication is done
+    this.userProfile = await this.authenticationService.getUser();
+    if(this.userProfile){
+      this.user = this.userProfile.firstName + ' ' + this.userProfile.lastName;
+    }else {
+      await this.router.navigate(['auth/login']);
+    }
   }
 
   onResize(event: any): void {

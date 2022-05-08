@@ -13,16 +13,28 @@ import {
   NbActionsModule, NbContextMenuModule, NbUserModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NavigationComponent } from './layouts/navigation/navigation.component';
-import { DefaultComponent } from './pages/default/default.component';
-import {DefaultModule} from "./pages/default/default.module";
 import {ComponentsModule} from "./components/components.module";
+import {AuthenticationModule} from "./pages/authentication/authentication.module";
+import { ArticleComponent } from './pages/article/article.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { ArticleOverviewComponent } from './pages/article-overview/article-overview.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { ArticleEditComponent } from './pages/article-edit/article-edit.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { ArticleSearchComponent } from './pages/article-overview/article-search/article-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
-    DefaultComponent
+    ArticleComponent,
+    ProfileComponent,
+    ProfilePageComponent,
+    ArticleOverviewComponent,
+    AdminComponent,
+    ArticleEditComponent,
+    DashboardComponent,
+    ArticleSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,12 +45,12 @@ import {ComponentsModule} from "./components/components.module";
     NbEvaIconsModule,
     NbMenuModule.forRoot(),
     NbSidebarModule.forRoot(),
-    DefaultModule,
     NbIconModule,
     NbActionsModule,
     NbContextMenuModule,
     NbUserModule,
-    ComponentsModule
+    ComponentsModule,
+    AuthenticationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

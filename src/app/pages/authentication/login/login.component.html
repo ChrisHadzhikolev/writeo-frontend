@@ -1,0 +1,37 @@
+<script src="https://use.typekit.net/rjb4unc.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+<div class="container">
+  <div class="logo">Login</div>
+  <div class="login-item">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form form-login">
+      <div class="form-group">
+        <label class="user" for="email"><span class="hidden">Email</span></label>
+        <input id="email" class="form-input" placeholder="Email" type="text" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+          <div *ngIf="f['email'].errors['required']">
+            <label style="color: red">Email is required</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="lock" for="password"><span class="hidden">Password</span></label>
+        <input id="password" type="password" formControlName="password" class="form-input" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+          <div *ngIf="f['password'].errors['required']">
+            <label style="color: red">Password is required</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input [disabled]="loading" type="submit" value="Sign In">
+      </div>
+
+      <div class="form-group">
+        <a routerLink="/register" class="btn btn-link">Sign Up</a>
+        <a routerLink="/register" class="btn btn-link" style="margin-left: 20px">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+</div>

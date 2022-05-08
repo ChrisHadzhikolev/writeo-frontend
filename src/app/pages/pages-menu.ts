@@ -44,4 +44,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/settings',
     icon: 'person-outline'
   },
+  {
+    title: 'Sign in',
+    link: '/auth/user',
+    icon: 'person-outline'
+  },
+  {
+    title: 'Sign up',
+    link: '/auth/register',
+    icon: 'person-outline'
+  },
 ];
